@@ -2,12 +2,12 @@
 
 ![Screenshot](https://cloud.githubusercontent.com/assets/26884/14630775/04523c10-0610-11e6-8c40-1938b021d166.png)
 
-Movable tooltips for leaflet. Requires `Leaflet@^1.0.0`
+Movable tooltips for leaflet. Requires `Leaflet@^1.0.0` (support for `leaflet@0.7.x` will come later)
 See the [demo](https://w8r.github.io/Leaflet.Tooltip/example/).
 
 ## API
 
-In `leaflet@1.0.0 it's much like `L.Popup`, a layer, so you can `.addLayer(tooltip)` and `.removeLayer(tooltip)`.
+In `leaflet@1.0.0` it's much like `L.Popup`, a layer, so you can `.addLayer(tooltip)` and `.removeLayer(tooltip)`.
 Also it can have optional reference to `source`, in the `._source` field, you can do what yout want with it in subclasses, for instance, make the tooltip follow a draggable marker.
 
 * Constructor
