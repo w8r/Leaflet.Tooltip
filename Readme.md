@@ -1,4 +1,4 @@
-# Leaflet.Tooltip
+# Leaflet.Tooltip [![npm version](https://badge.fury.io/js/leaflet-tooltip.svg)](https://badge.fury.io/js/leaflet-tooltip)
 
 ![Screenshot](https://cloud.githubusercontent.com/assets/26884/14630775/04523c10-0610-11e6-8c40-1938b021d166.png)
 
