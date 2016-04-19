@@ -2,7 +2,7 @@
 
 ![Screenshot](https://cloud.githubusercontent.com/assets/26884/14630775/04523c10-0610-11e6-8c40-1938b021d166.png)
 
-Movable tooltips for leaflet. Requires `Leaflet@^1.0.0` (support for `leaflet@0.7.x` will come later)
+Movable tooltips for leaflet. Requires `Leaflet@^1.0.0` (support for `leaflet@0.7.x` will come later). Tooltip styling comes from [Bootstrap](https://github.com/twbs/bootstrap).
 See the [demo](https://w8r.github.io/Leaflet.Tooltip/example/).
 
 ## API
