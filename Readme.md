@@ -2,7 +2,8 @@
 
 ![Screenshot](https://cloud.githubusercontent.com/assets/26884/14630775/04523c10-0610-11e6-8c40-1938b021d166.png)
 
-Movable tooltips for leaflet. See the [demo](https://w8r.github.io/Leaflet.Tooltip/example/)
+Movable tooltips for leaflet. Requires `Leaflet@^1.0.0`
+See the [demo](https://w8r.github.io/Leaflet.Tooltip/example/).
 
 ## API
 
@@ -13,14 +14,14 @@ In `leaflet@1.0.0 it's much like `L.Popup`, a layer, so you can `.addLayer(toolt
   * **`L.tooltip(options, source)`**
 * Options:
   * `options.position` on of `'left'`, `'right'`, `'top'`, `'bottom'`
-    `options.className` Container class name default: `'tooltip'`
-    `options.arrowClass` Arrow class name, default `'tooltip-arrow'`
-    `options.contentClass` Contewnt class, default `'tooltip-inner'`
-    `options.subtextClass` Subtext, default `'tooltip-subtext'`
-    `options.showClass` Class name to show/hide the tooltip
-    `options.noWrap` Adds the `'nowrap'` class to container, too keep it in one line, default: `false`
-    `options.wrapScreen` Whether to change position on screen edges, defaults to `true`
-    `options.offset` Tooltip offset from the mouse position, default: `[10, 5]`
+  * `options.className` Container class name default: `'tooltip'`
+  * `options.arrowClass` Arrow class name, default `'tooltip-arrow'`
+  * `options.contentClass` Contewnt class, default `'tooltip-inner'`
+  * `options.subtextClass` Subtext, default `'tooltip-subtext'`
+  * `options.showClass` Class name to show/hide the tooltip
+  * `options.noWrap` Adds the `'nowrap'` class to container, too keep it in one line, default: `false`
+  * `options.wrapScreen` Whether to change position on screen edges, defaults to `true`
+  * `options.offset` Tooltip offset from the mouse position, default: `[10, 5]`
 * `.show(), .hide()`
 * `.setLatLng()` Use coordinate to position the tooltip
 * `.updatePosition(point)` Use `layerPoint` to update the position - recommended for use with `mousemove` event
