@@ -1,0 +1,38 @@
+{
+  "name": "leaflet-tooltip",
+  "version": "1.0.0-beta.1",
+  "description": "Leaflet tooltip, specifically designed to be moved around the screen",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js",
+    "start": "npm run watch & ./node_modules/.bin/serve -p 3001",
+    "watch": "watchify -v -d example/js/app.js -o example/js/bundle.js",
+    "lint": "eslint ./src/",
+    "build-js": "cat src/Tooltip.js > ./dist/L.Tooltip-src.js",
+    "build-css": "lessc src/Tooltip.less > dist/tooltip.css",
+    "compress": "uglifyjs ./dist/L.Tooltip-src.js -o ./dist/L.Tooltip.js --comments -m",
+    "build": "npm run lint && npm run build-js && npm run compress && npm run build-css",
+    "release": "git push origin master && git checkout gh-pages && git merge master && git push origin gh-pages && npm publish"
+  },
+  "keywords": [
+    "leaflet",
+    "maps",
+    "gis",
+    "tooltip",
+    "highlight"
+  ],
+  "author": "Alexander Milevski <info@w8r.name>",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "eslint": "^2.8.0",
+    "leaflet-editable": "leaflet/leaflet.editable#gh-pages",
+    "less": "^2.6.1",
+    "serve": "^1.4.0",
+    "uglifyjs": "^2.4.10",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "leaflet": "^1.0.0-beta.2"
+  }
+}
