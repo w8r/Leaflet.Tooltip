@@ -12,7 +12,7 @@
     "build-css": "lessc src/Tooltip.less > dist/tooltip.css",
     "compress": "uglifyjs ./dist/L.Tooltip-src.js -o ./dist/L.Tooltip.js --comments -m",
     "build": "npm run lint && npm run build-js && npm run compress && npm run build-css",
-    "release": "git push origin master && git checkout gh-pages && git merge master && git push origin gh-pages && npm publish"
+    "release": "git push origin master && git checkout gh-pages && git merge master && git push origin gh-pages && git checkout master && npm publish"
   },
   "keywords": [
     "leaflet",
