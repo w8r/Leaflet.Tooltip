@@ -8,6 +8,7 @@ See the [demo](https://w8r.github.io/Leaflet.Tooltip/example/).
 ## API
 
 In `leaflet@1.0.0 it's much like `L.Popup`, a layer, so you can `.addLayer(tooltip)` and `.removeLayer(tooltip)`.
+Also it can have optional reference to `source`, in the `._source` field, you can do what yout want with it in subclasses, for instance, make the tooltip follow a draggable marker.
 
 * Constructor
   * **`new L.Tooltip(options, source)`**
