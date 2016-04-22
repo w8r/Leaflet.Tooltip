@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "tape test/*.js",
+    "postinstall": "rimraf ./node_modules/leaflet-editable/node_modules",
     "start": "npm run watch & ./node_modules/.bin/serve -p 3001",
     "watch": "watchify -v -d example/js/app.js -o example/js/bundle.js",
     "lint": "eslint ./src/",
@@ -25,6 +26,7 @@
   "license": "MIT",
   "devDependencies": {
     "browserify": "^13.0.0",
+    "rimraf": "*",
     "eslint": "^2.8.0",
     "leaflet-editable": "leaflet/leaflet.editable#gh-pages",
     "less": "^2.6.1",

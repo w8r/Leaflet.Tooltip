@@ -128,6 +128,7 @@ L.Tooltip = L.Layer.extend({
    * @return {L.Tooltip}
    */
   onRemove: function(map) {
+    L.Util.cancelAnimFrame(this._updateTimer);
     this.getPane().removeChild(this._container);
     this._map = null;
     return this;
@@ -217,7 +218,10 @@ L.Tooltip = L.Layer.extend({
    * @param  {L.Point=} point
    */
   updatePosition: function(point) {
-    L.Util.requestAnimFrame(function() {
+    if (!this._map) {
+      return;
+    }
+    this._updateTimer = L.Util.requestAnimFrame(function() {
       if (!point) {
         point = this._map.latLngToLayerPoint(this._latlng);
       }
