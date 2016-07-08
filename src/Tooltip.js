@@ -218,15 +218,12 @@ L.Tooltip = L.Layer.extend({
    * @param  {L.Point=} point
    */
   updatePosition: function(point) {
-    if (!this._map) {
-      return;
-    }
     this._updateTimer = L.Util.requestAnimFrame(function() {
-      if (!point) {
-        point = this._map.latLngToLayerPoint(this._latlng);
+      if (this._map) {
+        point = point || this._map.latLngToLayerPoint(this._latlng);
+        L.DomUtil.setPosition(this._container, point.add(
+          this._getOffset(point, this.options.position)));
       }
-      L.DomUtil.setPosition(this._container, point.add(
-        this._getOffset(point, this.options.position)));
     }, this);
   }
 
