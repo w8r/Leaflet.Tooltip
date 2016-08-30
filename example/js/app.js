@@ -1,5 +1,3 @@
-var L = require('leaflet');
-var editable = require('leaflet-editable');
 var Tooltip = require('../../');
 var MAPBOX_TOKEN = 'pk.eyJ1IjoidzhyIiwiYSI6IlF2Nlh6QVkifQ.D7BkmeoMI7GEkMDtg3durw';
 
