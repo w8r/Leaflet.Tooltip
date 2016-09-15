@@ -118,7 +118,7 @@ L.Tooltip = L.Layer.extend({
    * @return {L.Tooltip}
    */
   hide: function() {
-    L.DomUtil.addClass(this._container, this.options.showClass);
+    L.DomUtil.removeClass(this._container, this.options.showClass);
     return this;
   },
 
