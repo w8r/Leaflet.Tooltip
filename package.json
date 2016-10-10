@@ -25,7 +25,7 @@
   "license": "MIT",
   "devDependencies": {
     "browserify": "^13.0.0",
-    "eslint": "^2.8.0",
+    "eslint": "^3.7.1",
     "less": "^2.6.1",
     "rimraf": "^2.5.4",
     "serve": "^1.4.0",
