@@ -1,6 +1,6 @@
 {
   "name": "leaflet-tooltip",
-  "version": "1.0.0-rc.3",
+  "version": "1.0.0",
   "description": "Leaflet tooltip, specifically designed to be moved around the screen",
   "main": "index.js",
   "scripts": {
