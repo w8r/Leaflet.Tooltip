@@ -222,7 +222,7 @@ L.Tooltip = L.Layer.extend({
       if (this._map) {
         point = point || this._map.latLngToLayerPoint(this._latlng);
         L.DomUtil.setPosition(this._container, point.add(
-          this._getOffset(point, this.options.position)));
+          this._getOffset(point, this.options.position))._floor());
       }
     }, this);
   }
