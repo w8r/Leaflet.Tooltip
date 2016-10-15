@@ -101,6 +101,7 @@ L.Tooltip = L.Layer.extend({
       this.setContent(this.options.content);
     }
     this.getPane().appendChild(this._container);
+    this._map.on('zoomend', this.updatePosition, this);
     return this;
   },
 
@@ -130,6 +131,7 @@ L.Tooltip = L.Layer.extend({
   onRemove: function(map) {
     L.Util.cancelAnimFrame(this._updateTimer);
     this.getPane().removeChild(this._container);
+    this._map.off('zoomend', this.updatePosition, this);
     this._map = null;
     return this;
   },
@@ -140,8 +142,11 @@ L.Tooltip = L.Layer.extend({
    * @return {L.LatLng}
    */
   setContent: function(content) {
-    this._contentNode.innerHTML = content;
-    this.updatePosition();
+    this.options.content = content;
+    if (this._map) {
+      this._contentNode.innerHTML = content;
+      this.updatePosition();
+    }
     return this;
   },
 
