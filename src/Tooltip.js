@@ -101,7 +101,7 @@ L.Tooltip = L.Layer.extend({
       this.setContent(this.options.content);
     }
     this.getPane().appendChild(this._container);
-    this._map.on('zoomend', this.updatePosition, this);
+    this._map.on('zoomend', this.updatePosition);
     return this;
   },
 
@@ -131,7 +131,7 @@ L.Tooltip = L.Layer.extend({
   onRemove: function(map) {
     L.Util.cancelAnimFrame(this._updateTimer);
     this.getPane().removeChild(this._container);
-    this._map.off('zoomend', this.updatePosition, this);
+    this._map.off('zoomend', this.updatePosition);
     this._map = null;
     return this;
   },
@@ -203,8 +203,11 @@ L.Tooltip = L.Layer.extend({
       }
     }
 
-    this._container.className = (options.className + ' ' + position +
-      ' ' + options.showClass);
+    var className = options.className + ' ' + position;
+    if (L.DomUtil.hasClass(this._container, this.options.showClass)) {
+      className = className + ' ' + options.showClass;
+    }
+    this._container.className = className;
 
     var offset = options.offset;
     if (position        === POSITIONS.LEFT) {
@@ -225,7 +228,13 @@ L.Tooltip = L.Layer.extend({
   updatePosition: function(point) {
     this._updateTimer = L.Util.requestAnimFrame(function() {
       if (this._map) {
-        point = point || this._map.latLngToLayerPoint(this._latlng);
+        if (!point) {
+            point = this._map.latLngToLayerPoint(this._latlng);
+        }
+        else {
+            // new position defined, do not forget to update the _latlng
+            this._latlng = this._map.layerPointToLatLng(point);
+        }
         L.DomUtil.setPosition(this._container, point.add(
           this._getOffset(point, this.options.position))._floor());
       }
